@@ -1,5 +1,4 @@
-
-#include "shell.h"
+#include "main.h"
 
 alias_t *add_alias_end(alias_t **head, char *name, char *value);
 void free_alias_list(alias_t *head);
@@ -112,4 +111,3 @@ void free_list(list_t *head)
 		head = next;
 	}
 }
-

@@ -1,36 +1,25 @@
-#include "shell.h"
+#include "main.h"
 
-int _strncmp(const char *s1, const char *s2, size_t n);
-char *_strcpy(char *dest, const char *src);
-char *_strncat(char *dest, const char *src, size_t n);
-char *_strcat(char *dest, const char *src);
 int _strlen(const char *s);
+char *_strcpy(char *dest, const char *src);
+char *_strcat(char *dest, const char *src);
+char *_strncat(char *dest, const char *src, size_t n);
 
 /**
- * _strncmp - Compare two strings.
- * @s1: Pointer to a string.
- * @s2: Pointer to a string.
- * @n: The first n bytes of the strings to compare.
+ * _strlen - Returns the length of a string.
+ * @s: A pointer to the characters string.
  *
- * Return: Less than 0 if s1 is shorter than s2.
- *         0 if s1 and s2 match.
- *         Greater than 0 if s1 is longer than s2.
+ * Return: The length of the character string.
  */
-int _strncmp(const char *s1, const char *s2, size_t n)
+int _strlen(const char *s)
 {
-	size_t i;
+	int length = 0;
 
-	for (i = 0; s1[i] && s2[i] && i < n; i++)
-	{
-		if (s1[i] > s2[i])
-			return (s1[i] - s2[i]);
-		else if (s1[i] < s2[i])
-			return (s1[i] - s2[i]);
-	}
-	if (i == n)
-		return (0);
-	else
-		return (-15);
+	if (!s)
+		return (length);
+	for (length = 0; s[length]; length++)
+		;
+	return (length);
 }
 
 /**
@@ -95,21 +84,3 @@ char *_strncat(char *dest, const char *src, size_t n)
 
 	return (dest);
 }
-
-/**
- * _strlen - Returns the length of a string.
- * @s: A pointer to the characters string.
- *
- * Return: The length of the character string.
- */
-int _strlen(const char *s)
-{
-	int length = 0;
-
-	if (!s)
-		return (length);
-	for (length = 0; s[length]; length++)
-		;
-	return (length);
-}
-

@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 char *get_args(char *line, int *exe_ret);
 int call_args(char **args, char **front, int *exe_ret);
@@ -207,4 +207,3 @@ int check_args(char **args)
 	}
 	return (0);
 }
-

@@ -1,4 +1,5 @@
-#include "shell.h"
+#include <stdio.h>
+#include "main.h"
 
 char **_copyenv(void);
 void free_env(void);
